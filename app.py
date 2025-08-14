@@ -58,7 +58,7 @@ def home_page():
 
 def forward_chaining_page():
     st.title("🚀 Forward Chaining: The Clue Collector")
-    st.header("How It Works (For Kids! 👧👦)")
+    st.header("How It Works ")
     st.markdown("""
     Imagine you're a detective. You start with all the clues you have, and you see what you can figure out.
     When a rule's clues are all found, you can make a new conclusion! You keep doing this until you can't figure out anything else.
@@ -114,7 +114,7 @@ def forward_chaining_page():
 
 def backward_chaining_page():
     st.title("🎯 Backward Chaining: The Goal Hunter")
-    st.header("How It Works (For Kids! 👧👦)")
+    st.header("How It Works ")
     st.markdown("""
     Imagine you have a specific goal, like "I want to eat a delicious pizza." 🍕
     You ask, "What do I need to make a pizza?"

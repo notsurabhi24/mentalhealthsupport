@@ -58,7 +58,7 @@ def home_page():
 
 def forward_chaining_page():
     st.title("🚀 Forward Chaining: The Clue Collector")
-    st.header("How It Works ")
+    st.header("How It Works (For Kids! 👧👦)")
     st.markdown("""
     Imagine you're a detective. You start with all the clues you have, and you see what you can figure out.
     When a rule's clues are all found, you can make a new conclusion! You keep doing this until you can't figure out anything else.
@@ -114,7 +114,7 @@ def forward_chaining_page():
 
 def backward_chaining_page():
     st.title("🎯 Backward Chaining: The Goal Hunter")
-    st.header("How It Works ")
+    st.header("How It Works (For Kids! 👧👦)")
     st.markdown("""
     Imagine you have a specific goal, like "I want to eat a delicious pizza." 🍕
     You ask, "What do I need to make a pizza?"
@@ -146,6 +146,8 @@ def backward_chaining_page():
     # State for tracking questions and answers
     if 'questions_asked' not in st.session_state:
         st.session_state.questions_asked = {}
+    if 'backward_run' not in st.session_state:
+        st.session_state.backward_run = False
 
     def backward_chain_demo(goal, facts, indent=""):
         if goal in facts:
@@ -179,6 +181,7 @@ def backward_chaining_page():
     if st.button("Start the Goal Hunt!", key='start_backward'):
         st.write("---")
         st.session_state.questions_asked = {} # Reset questions
+        st.session_state.backward_run = True # Set the flag to true
         st.subheader("🎯 Hunting for the Goal...")
         
         backward_chain_demo(goal_to_prove, set())
@@ -200,4 +203,3 @@ elif page == "Forward Chaining":
     forward_chaining_page()
 elif page == "Backward Chaining":
     backward_chaining_page()
-
